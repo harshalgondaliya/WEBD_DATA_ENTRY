@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="label">Registration Form</h1>
+        <form class="registration_form" action="upload_documents.html" method="post" name="form">
+            <div class="font">Full Name</div>
+            <input type="text" name="full_name" placeholder="As same as 10th Marksheet !!">
+            <div id="name_error" class="error"></div>
+
+            <div class="font">Email</div>
+            <input type="email" name="email" placeholder="Enter email">
+            <div id="email_error" class="error"></div>
+
+            <div class="font">Phone Number</div>
+            <input type="tel" name="phone" placeholder="Contact Number">
+            <div id="phone_error" class="error"></div>
+
+            <div class="font">Address</div>
+            <textarea name="address" placeholder="Enter your Address"></textarea>
+            <div id="address_error" class="error"></div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="valid.js"></script>
+</body>
+
+</html>

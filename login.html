@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validated Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateLogin() {
+            const email = document.querySelector('input[name="email"]');
+            const password = document.querySelector('input[name="password"]');
+            const emailError = document.getElementById('email_error');
+            const passwordError = document.getElementById('pass_error');
+
+            let isValid = true;
+
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+            if (!email.value.trim()) {
+                emailError.textContent = 'Email is required.';
+                isValid = false;
+            }
+
+            if (!password.value.trim()) {
+                passwordError.textContent = 'Password is required.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                window.location.href = 'main.html';
+            }
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="label">Login Into ABC ID</h1>
+        <form class="login_form" id="loginForm" onsubmit="return validateLogin()">
+            <div class="font">Email (phone for mobile accounts)</div>
+            <input autocomplete="off" type="text" name="email" placeholder="Enter email">
+            <div id="email_error" class="error"></div>
+
+            <div class="font font2">
+                <p>Password &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="forgot_password.html">Forget your password?</a></p>
+            </div>
+            <input type="password" name="password" placeholder="Password">
+            <div id="pass_error" class="error"></div>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <br>
+        <p>Need an account? <a href="signup.html">Sign up now!</a></p>
+    </div>
+    <script src="valid.js"></script>
+</body>
+
+</html>

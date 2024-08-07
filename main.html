@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="label">Welcome to the Student Portal</h1>
+        <p>Choose an option below:</p>
+        <div class="button-container">
+            <button onclick="navigateTo('registration.html')" class="btn">Student Registration</button><br><br>
+            <button onclick="navigateTo('./upload_documents.html')" class="btn">Upload Documents</button><br><br>
+            <button onclick="navigateTo('edit_profile.html')" class="btn">Edit Your Current Profile</button>
+        </div>
+    </div>
+</body>
+
+</html>

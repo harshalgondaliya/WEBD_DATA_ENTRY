@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('./bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    height: 100vh;
+    opacity: 60%;
+    font: bold;
+}
+
+.container {
+    position: relative;
+    width: 450px;
+    background: #dedede;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style for the file input container */
+
+.file-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.file-input-container input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Hide the default file input */
+    cursor: pointer;
+    /* Show pointer cursor */
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-input-label:hover {
+    background-color: #d0d0d0;
+}
+
+.label {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #130f40;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.font {
+    font-size: 18px;
+    color: #130f40;
+    margin: 5px 0;
+}
+
+input[type="text"] {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    color: #333;
+}
+
+input[type="email"] {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    color: #333;
+}
+
+input[type="password"] {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    color: #333;
+}
+
+input[type="tel"] {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    color: #333;
+}
+
+textarea,
+input[type="file"] {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    font-family: 'Comic Sans MS', cursive;
+    color: #333;
+}
+
+button {
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    background: #1A237E;
+    border: none;
+    border-radius: 3px;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: #151c6a;
+}
+
+#error {
+    display: none;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #C62828;
+    background: rgba(255, 0, 0, 0.1);
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+}

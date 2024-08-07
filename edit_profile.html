@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="label">Edit Profile</h1>
+        <form class="edit_form" action="home.html" method="post" name="form" id="edit-form">
+            <div class="font">Full Name</div>
+            <input type="text" name="full_name" id="full_name" placeholder="As same as 10th Marksheet !!">
+            <div id="name_error" class="error"></div>
+
+            <div class="font">Email</div>
+            <input type="email" name="email" id="email" placeholder="Enter email">
+            <div id="email_error" class="error"></div>
+
+            <div class="font">Phone Number</div>
+            <input type="tel" name="phone" id="phone" placeholder="Contact Number">
+            <div id="phone_error" class="error"></div>
+
+            <div class="font">Address</div>
+            <textarea name="address" id="address" placeholder="Enter your Address"></textarea>
+            <div id="address_error" class="error"></div>
+
+            <div class="font">Upload Documents</div>
+            <div class="file-input-container">
+                <label for="file-upload" class="file-input-label">Choose files</label>
+                <input type="file" id="file-upload" name="documents" multiple>
+                <span id="file-name-display">No file chosen</span>
+            </div>
+            <div id="upload_error" class="error"></div>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <script src="valid.js"></script>
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const fileInput = event.target;
+            const fileNameDisplay = document.getElementById('file-name-display');
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = Array.from(fileInput.files).map(file => file.name).join(', ');
+            } else {
+                fileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('edit-form').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Validate full name
+            const fullName = document.getElementById('full_name');
+            if (fullName.value.trim() === '') {
+                showError(fullName, 'name_error', 'Full Name is required.');
+                valid = false;
+            } else {
+                hideError('name_error');
+            }
+
+            // Validate email
+            const email = document.getElementById('email');
+            if (email.value.trim() === '') {
+                showError(email, 'email_error', 'Email is required.');
+                valid = false;
+            } else {
+                hideError('email_error');
+            }
+
+            // Validate phone number
+            const phone = document.getElementById('phone');
+            if (phone.value.trim() === '') {
+                showError(phone, 'phone_error', 'Phone Number is required.');
+                valid = false;
+            } else {
+                hideError('phone_error');
+            }
+
+            // Validate address
+            const address = document.getElementById('address');
+            if (address.value.trim() === '') {
+                showError(address, 'address_error', 'Address is required.');
+                valid = false;
+            } else {
+                hideError('address_error');
+            }
+
+            // Validate file upload
+            const upload = document.getElementById('file-upload');
+            if (upload.files.length === 0) {
+                showError(upload, 'upload_error', 'Please upload at least one document.');
+                valid = false;
+            } else {
+                hideError('upload_error');
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+
+        function showError(field, errorId, message) {
+            field.style.border = "1px solid red";
+            document.getElementById(errorId).style.display = "block";
+            document.getElementById(errorId).textContent = message;
+        }
+
+        function hideError(errorId) {
+            document.getElementById(errorId).style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

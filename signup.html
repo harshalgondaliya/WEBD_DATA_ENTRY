@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Sign-up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="label">Sign-up for ABC ID</h1>
+        <form class="signup_form" action="login.html" method="post" name="form" onsubmit="return validated()">
+            <div class="font">Name</div>
+            <input type="text" name="name" placeholder="Enter name">
+            <div id="name_error" class="error"></div>
+
+            <div class="font">Email</div>
+            <input type="email" name="email" placeholder="Enter email">
+            <div id="email_error" class="error"></div>
+
+            <div class="font">Password</div>
+            <input type="password" name="password" placeholder="Password">
+            <div id="pass_error" class="error"></div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <br>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <script src="valid.js"></script>
+</body>
+
+</html>
